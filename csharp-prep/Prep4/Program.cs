@@ -27,7 +27,7 @@ class Program
         int sum = 0;
         foreach (int num in numbers)
         {
-            sum += number;
+            sum += num;
         }
 
         Console.WriteLine($"The sum is: {sum}.");
@@ -40,7 +40,7 @@ class Program
         {
             if (num > max)
             {
-                max = number;
+                max = num;
             }
         }
         Console.WriteLine($"The largest number is: {max}.");
