@@ -4,6 +4,7 @@ class Program
 {
     static void DisplayMenu()
     {
+
         Console.WriteLine("Menu:");
         Console.WriteLine("1. Add new entry");
         Console.WriteLine("2. Display journal");
@@ -15,6 +16,9 @@ class Program
 
     static void Main(string[] args)
     {
+        DateTime theCurrentTime = DateTime.Now;
+        string date = theCurrentTime.ToShortDateString();
+
         // I declare the resume class outside of the while loop so it doesn't run again everytime with the loop
         Journal theJournal = new Journal();
         bool keepRunning = true;
@@ -28,28 +32,43 @@ class Program
             if (choice == "1")
             {
                 //Add new job
-                Console.Write("What emotion do you want to address today? ");
-                string emotion = Console.ReadLine();
+                //Console.Write("What emotion do you want to address today? ");
+                //string emotion = Console.ReadLine();
 
-                //GetRandomPrompt();
+                PromptGenerator prompt = new PromptGenerator();
+                string question = prompt.GetRandomPrompt();
+                Console.WriteLine(question);
                 //string thoughts = Console.ReadLine();
 
                 Entry newEntry = new Entry();
-                // put the new job into the list
-                newEntry._date = Console.ReadLine();
-                newEntry._prompt = Console.ReadLine();
+                newEntry._date = date;
+                newEntry._prompt = question;
                 newEntry._response = Console.ReadLine();
 
 
-                theJournal.entries.Add(newEntry); //This helps keep the new job out of the scope of the if statement, kinda save it.
+                theJournal._entries.Add(newEntry);
 
             }
             else if (choice == "2")
             {
-                //display reusme
                 theJournal.Display(); //REMEMBER TO USE THE OBJECT INSTEAD OF THE CLASS
             }
             else if (choice == "3")
+            {
+                Console.WriteLine("To which file do you want to save your entry?");
+                theJournal._fileName = Console.ReadLine();
+                theJournal.SaveFile(theJournal._entries);
+            }
+            else if(choice == "4")
+            {
+                Console.WriteLine("From which file do you want to load your entry?");
+                theJournal._fileName = Console.ReadLine();
+                theJournal.LoadFile();
+                Console.WriteLine("");
+            }
+
+
+            else if (choice == "5")
             {
                 //quit
                 keepRunning = false;

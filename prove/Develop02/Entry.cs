@@ -12,5 +12,6 @@ public class Entry
     {
         Console.WriteLine($"{_date}, {_prompt}:" );
         Console.WriteLine($"{_response}");
+        Console.WriteLine("");
     }
 }
