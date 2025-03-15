@@ -1,0 +1,116 @@
+
+        Video video1 = new Video();
+        video1._title = "How to make brownies";
+        video1._author = "Luz Paulino";
+        video1._lenght = "3.17";
+
+            Comment c11 = new Comment();
+            c11._commentText ="I am so excited to make this recipe";
+            Comment c12 = new Comment();
+            c12._commentText = "This is the best!";
+            Comment c13 = new Comment();
+            c13._commentText = "I have been waiting for this recipe for so long.";
+
+            // Comment c12 = new Comment("Lucas Perez", "This is the best!");
+            // Comment c13 = new Comment("Crys Paulino", "I am so excited to make this recipe for me and my family.");
+
+        Video video2 = new Video();
+        video2._title = "Understanding Javascript";
+        video2._author = "Brother Thompson";
+        video2._lenght = "8:12";
+
+            Comment c21 = new Comment();
+            c21._commentText ="This was so hard to understand in class, I am glad you posted this video.";
+            Comment c22 = new Comment();
+            c22._commentText = "Promise I can never get how Javascript works.";
+            Comment c23 = new Comment();
+            c23._commentText = "Brother Thompson was my professor five years ago, this video is awesome, keep it up!";
+        
+        Video video3 = new Video();
+        video3._title = "Algorithms";
+        video3._author = "Brother Kay";
+        video3._lenght = "5:46";
+
+            Comment c31 = new Comment();
+            c31._commentText ="I feel I can do things so much organized after watching this videos.";
+            Comment c32 = new Comment();
+            c32._commentText = "Now my wife wants to set up algorithms for laundry and the dishwaher. I hope it works";
+            Comment c33 = new Comment();
+            c33._commentText = "Here in 2025!";
+
+        video1.videos.Add(video1);
+        video2.videos.Add(video2);
+        video3.videos.Add(video3);
+
+        c11.comments.Add(c11);
+        c12.comments.Add(c12);
+        c13.comments.Add(c13);
+        c11.comments.Add(c21);
+        c11.comments.Add(c22);
+        c11.comments.Add(c23);
+        c11.comments.Add(c31);
+        c11.comments.Add(c32);
+        c11.comments.Add(c33);
+        
+        video1.Display();
+        Console.WriteLine("Comments: ");
+        c11.Display();
+        c12.Display();
+        c13.Display();
+        Console.WriteLine();
+
+        video2.Display();
+        Console.WriteLine("Comments: ");
+        c21.Display();
+        c22.Display();
+        c23.Display();
+        Console.WriteLine();
+
+        video3.Display();
+        Console.WriteLine("Comments: ");
+        c31.Display();
+        c32.Display();
+        c33.Display();
+        Console.WriteLine();
+
+
+
+// PUBLIC CLASS VIDEO:
+
+    public string _title;
+    public string _author;
+    public string _lenght;
+
+    public List<Video> videos = new List<Video>();
+
+
+
+    // public Video(string title,string author, string lenght)
+    // {
+    //     _title = title;
+    //     _author = author;
+    //     _lenght = lenght;
+    // }
+
+    public void Display()
+    {
+        foreach (Video v in videos)
+        {
+            Console.WriteLine($"Video: {_title}, from {_author}, {_lenght} long");
+        }
+    }
+
+
+// PUBLIC CLASS COMMENT
+public string _commentText;
+    public List<Comment> comments = new List<Comment>();
+
+    // public Comment(string commentText)
+    // {
+    //     _commentText = commentText;
+    // }
+
+    public void Display()
+    {
+        Console.WriteLine($"- {_commentText}");
+    }
