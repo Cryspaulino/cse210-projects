@@ -3,20 +3,46 @@ using System.Numerics;
 using System.Data;
 using System.Collections.Generic;
 
-class Program
-{
-    static void Main(string[] args) 
+class Program {
+    static void main(string [] args)
     {
-        Book b1 = new Book("Jurassic Park", "Michael Crichton");
-        Book b2 = new Book("Tom Sayer", "Mark Twain");
+        Teacher t1 = new Teacher("Sarah", "Jones", "Mr", 18);
+        Console.WriteLine(t1.GetGreeting());
 
-        b1.CheckOut();
+        Specialist s1 = new Specialist("Monica", "Brown", "Ms", "reading");
+        Console.WriteLine(s1.GetGreeting());
+    }
+}
 
-        Library theLibrary = new Library();
-        theLibrary.AddBook(b1);
-        theLibrary.AddBook(b2);
 
-        theLibrary.DisplayCatalog();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//     static void Main(string[] args) 
+//     {
+//         Book b1 = new Book("Jurassic Park", "Michael Crichton");
+//         Book b2 = new Book("Tom Sayer", "Mark Twain");
+
+//         b1.CheckOut();
+
+//         Library theLibrary = new Library();
+//         theLibrary.AddBook(b1);
+//         theLibrary.AddBook(b2);
+
+//         theLibrary.DisplayCatalog();
 
 
 
@@ -30,7 +56,7 @@ class Program
         // {
         //     Console.WriteLine("This book is not checked out.");
         // }
-    }
+
     
     
     
@@ -79,7 +105,3 @@ class Program
 
 
 
-
-
-
-}
