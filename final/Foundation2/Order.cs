@@ -3,6 +3,12 @@ public class Order
     private List<Product> _products = new List<Product>();
     private Customer _customer;
 
+    public Order(List<Product> products, Customer customer)
+    {
+        _products = products;
+        _customer = customer;
+    }
+
     public Customer GetCustomer()
     {
         return _customer;
@@ -33,21 +39,20 @@ public class Order
         return total;
     }
 
-    public string GetPackingLabel()
+    public void GetPackingLabel()
     {
-        string label = "";
         foreach (Product p in _products)
         {
-            label = $"{p.GetName()}, {p.GetProductID()}";
+            Console.WriteLine($"Product info: {p.GetName()}, {p.GetProductID()}");
         }
-        return label;
+            Console.WriteLine($"Total Price: {GetTotalPrice()}");
     }
 
-    public string GetShippingLabel()
+    public void GetShippingLabel()
     {
         string name = _customer.GetName();
         string address = _customer.GetCAddress().GetFullAddress();
-        return $"{name}, {address}";
+        Console.WriteLine($"Customer info: {name}, {address}");
     }
 }
 
