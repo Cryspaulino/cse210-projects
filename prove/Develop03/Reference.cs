@@ -22,11 +22,6 @@ public class Reference
 
     public string GetReference()
     {
-        return GetDisplayContent();
-    }
-
-    public string GetDisplayContent()
-    {
         return $"{_book} {_chapter} : {_startVerse}";
     }
 
@@ -35,6 +30,6 @@ public class Reference
     //Reference(book,chapter,verse, start,end)
     //GetDisplayContent(): string
     //In the program "If the end verse is less than 0 then don't display. In the constructor put it as a -1
-
+    //set endverse as null then when printed if null then the return i have and if not add endverse.
     
 }
