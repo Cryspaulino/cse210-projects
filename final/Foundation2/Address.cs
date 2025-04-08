@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 public class Address
 {
     private string _street;
@@ -18,6 +20,10 @@ public class Address
         return $"{_street}, {_city}, {_state}, {_country}";
     }
 
+    public bool IsInUSA()
+    {
+        return _country == "USA";
+    }
 
 }
 

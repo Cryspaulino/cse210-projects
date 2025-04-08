@@ -20,9 +20,14 @@ public class Reference
         _endVerse = endVerse;
     }
 
+    public string GetReference()
+    {
+        return GetDisplayContent();
+    }
+
     public string GetDisplayContent()
     {
-        return "";
+        return $"{_book} {_chapter} : {_startVerse}";
     }
 
     //public Reference(string referenceText){}

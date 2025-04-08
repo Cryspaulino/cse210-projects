@@ -8,20 +8,19 @@ public class Scripture
         _words = new List<Word>();
     }
 
-    // public Scripture(string ref, string words)
-    // {
-    //     _ref = ref;
-    //     _words = words;
-
-    // }
+    public Scripture(Reference referencee)
+    {
+        _ref = referencee;
+        // _words = words;
+    }
 
     public void DisplayScripture()
     {
-        Console.WriteLine($"The scripture is: ");
-        foreach (Word w in _words)
-        {
-            
-        }
+        Console.WriteLine($"The scripture is: {_ref}");
+        // foreach (Word w in _words)
+        // {
+
+        // }
     }
 
 

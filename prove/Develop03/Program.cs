@@ -4,8 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Reference reference = new Reference();
-        Scripture scripture = new Scripture(reference, );
+        Reference reference = new Reference("John", 3, 16);
+        Scripture scripture = new Scripture();
+
+        scripture.DisplayScripture();
+        reference.GetDisplayContent();
 
         bool shouldContinue = true;
 
@@ -15,6 +18,7 @@ class Program
         }
 
         Console.WriteLine("");
+
 
         //if enter: hide a word
         //Display the scripture
